@@ -73,7 +73,16 @@
           </div>
         </div>
       </div>
-      <?php if(isset($_GET['alert']) && $_GET['alert'] == "sucessCreate"): ?>
+      <?php if (isset($_GET['alert']) && $_GET['alert'] == "sucessCreate") : ?>
+        <div class="row">
+          <div class="col-12">
+            <div class="alert alert-success alert-dismissible">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <h5><i class="icon fas fa-check"></i> Sucesso!</h5>
+              Produto cadastrado com sucesso!
+            </div>
+          </div>
+        </div>
       <?php endif; ?>
       <div class="row">
         <div class="col-12">
@@ -86,6 +95,7 @@
                     <th>NOME</th>
                     <th>QTDE</th>
                     <th>VALOR</th>
+                    <th>Ações</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -94,7 +104,7 @@
                       <td><?= $prod['ProdutoId'] ?></td>
                       <td><?= $prod['Nome'] ?></td>
                       <td><?= $prod['Qtde'] ?></td>
-                      <td>R$ <?= $prod['Valor'] ?></td>
+                      <td>R$ <?= number_format($prod['Valor'], 2, ',', '.') ?></td>
                     </tr>
                   <?php endforeach; ?>
                 </tbody>
