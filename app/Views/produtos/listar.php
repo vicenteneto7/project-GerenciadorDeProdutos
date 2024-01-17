@@ -105,6 +105,12 @@
                       <td><?= $prod['Nome'] ?></td>
                       <td><?= $prod['Qtde'] ?></td>
                       <td>R$ <?= number_format($prod['Valor'], 2, ',', '.') ?></td>
+                      <td>
+                        <a href="/produtos/excluir/<?= $prod['ProdutoId'] ?>" class="btn btn-danger">
+                          <i class="fas fa-trash"></i>
+                        </a>
+
+                      </td>
                     </tr>
                   <?php endforeach; ?>
                 </tbody>

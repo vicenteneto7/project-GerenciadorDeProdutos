@@ -30,4 +30,13 @@ class Produtos extends BaseController
 
         return redirect()->to('produtos/listar?alert=sucessCreate');
     }
+
+    public function excluir($ProdutoId)
+    {
+        $produtos_model = new ProdutosModel();
+
+        $produtos_model->where('ProdutoId', $ProdutoId)->delete();
+
+        return redirect()->to('produtos/listar?alert=sucessDelete');
+    }
 }
