@@ -39,4 +39,15 @@ class Produtos extends BaseController
 
         return redirect()->to('produtos/listar?alert=sucessDelete');
     }
+
+    public function editar()
+    {
+        $dados = $this->request->getVar(); 
+
+        $produtos_model = new ProdutosModel();
+
+        $produtos_model->where('ProdutoId', $dados['ProdutoId'])->set($dados)->update();
+
+        return redirect()->to('produtos/listar?alert=sucessEdit');
+    }
 }
