@@ -3,19 +3,28 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\LoginModel;
 use App\Models\ProdutosModel;
 
 class Produtos extends BaseController
 {
     public function listar()
     {
+
+        $login_model = new LoginModel();
+
+        $login = $login_model->findAll();
+
+        $data1['login'] = $login;    
+        
+
         $produtos_model = new ProdutosModel();
 
         $produtos = $produtos_model->findAll();
 
         $data['produtos'] = $produtos;
 
-        echo view('templates/header');
+        echo view('templates/header', $data1);
         echo view('produtos/listar', $data);
         echo view('templates/footer');      
     }
