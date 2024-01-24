@@ -28,7 +28,7 @@
                 <?php if (isset($_GET['alert'])) : ?>
                     <p style="color: red;" class="login-box-msg">Acesso Negado! Informe os dados corretamente.</p>
                 <?php else : ?>
-                    <p class="login-box-msg">Acesse sua conta para continuar</p>
+                    <p class="login-box-msg">Crie uma conta para continuar</p>
                 <?php endif; ?>
 
                 <form action="/login/autenticar" method="post">
@@ -50,8 +50,7 @@
                     </div>
                     <div class="row">
                         <div style="display: flex; flex-direction: column; align-items: center;" class="col-12">
-                            <button type="submit" class="btn btn-primary btn-block">ACESSE SUA CONTA</button>
-                            <p>Não tem conta? <a style="color: blue;" href="/cadastrar-usuario">Crie sua conta aqui</a></p>
+                            <button type="submit" class="btn btn-primary btn-block">CRIAR CONTA</button>
                         </div>
                         <!-- /.col -->
                     </div>

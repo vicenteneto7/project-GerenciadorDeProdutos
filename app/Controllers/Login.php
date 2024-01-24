@@ -26,4 +26,8 @@ class Login extends BaseController
         }
         return redirect()->to('/?alert=errorLogin');
     }
+    public function cadastrar()
+    {
+        echo view('cadastrar-usuario/index');
+    }
 }

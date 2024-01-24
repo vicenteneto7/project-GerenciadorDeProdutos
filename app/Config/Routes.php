@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Login::index');
 $routes->post('login/autenticar', 'Login::autenticar');
+$routes->get('/cadastrar-usuario', 'Login::cadastrar');
 $routes->get('produtos/listar', 'Produtos::listar');
 $routes->post('produtos/cadastrar', 'Produtos::cadastrar');
 $routes->get('produtos/excluir/(:num)', 'Produtos::excluir/$1');
