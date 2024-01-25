@@ -59,4 +59,19 @@ class Produtos extends BaseController
 
         return redirect()->to('produtos/listar?alert=sucessEdit');
     }
+
+    public function listarSearch()
+    {
+        $search_model = new ProdutosModel();
+        $inputName = $this->request->getPost('inputName');
+
+        $produtos = $search_model->findAll();
+
+        $data['produtos'] = $produtos;
+
+        if(!empty($inputName)){
+            $name = $search_model->like(['name'=>'%' .$inputName. '%'])->fetchAll();
+            echo view('produtos/listar', ['name' => $name]);
+        }
+    }
 }

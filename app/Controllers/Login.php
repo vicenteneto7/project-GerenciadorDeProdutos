@@ -26,8 +26,18 @@ class Login extends BaseController
         }
         return redirect()->to('/?alert=errorLogin');
     }
-    public function cadastrar()
+    public function telaDeCadastro()
     {
         echo view('cadastrar-usuario/index');
+    }
+    public function cadastrar()
+    {
+        $dados = $this->request->getVar(); //pega os dados do formulário
+
+        $cadastrar_usuario = new LoginModel();
+
+        $cadastrar_usuario->insert($dados);
+
+        return redirect()->to('produtos/listar');
     }
 }

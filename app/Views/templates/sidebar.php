@@ -14,11 +14,11 @@
           <img src="<?= base_url('tema/dist/img/user2-160x160.jpg') ?>" class="img-circle elevation-2" alt="User Image">
         </div>
 
-        <?php foreach ($login as $usuario) : ?>
+        
         <div class="info">
-          <a href="/produtos/listar" class="d-block"><?= $usuario['Usuario'] ?></a>
+          <a href="/produtos/listar" class="d-block">Usuário</a>
         </div>
-        <?php endforeach; ?>
+        
         
       </div>
 

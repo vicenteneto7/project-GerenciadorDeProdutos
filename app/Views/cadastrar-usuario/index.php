@@ -24,14 +24,10 @@
             <div class="card-header text-center">
                 <a href="/" class="h1"><b>Gerenciador</b> de Produtos</a>
             </div>
-            <div class="card-body">
-                <?php if (isset($_GET['alert'])) : ?>
-                    <p style="color: red;" class="login-box-msg">Acesso Negado! Informe os dados corretamente.</p>
-                <?php else : ?>
-                    <p class="login-box-msg">Crie uma conta para continuar</p>
-                <?php endif; ?>
+            <div id="" class="card-body">
+                
 
-                <form action="/login/autenticar" method="post">
+                <form action="/usuario-cadastrado" method="post">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Digite seu usuário" name="Usuario">
                         <div class="input-group-append">
