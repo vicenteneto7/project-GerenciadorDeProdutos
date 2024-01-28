@@ -15,3 +15,5 @@ $routes->get('produtos/excluir/(:num)', 'Produtos::excluir/$1');
 $routes->post('produtos/editar', 'Produtos::editar');
 
 $routes->get('produtos/search', 'Produtos::listarSearch');
+
+$routes->get('/', 'Login::logout');

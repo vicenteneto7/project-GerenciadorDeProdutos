@@ -5,6 +5,8 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\LoginModel;
 use CodeIgniter\HTTP\ResponseInterface;
+use Firebase\JWT;
+use Firebase\JWT\JWT as JWTJWT;
 
 class Login extends BaseController
 {
@@ -21,7 +23,7 @@ class Login extends BaseController
         $login = $login_model->where('Usuario', $dados['Usuario'])->where('Senha', $dados['Senha'])->first();
 
         if(!empty($login))
-        {
+        {   
             return redirect()->to('produtos/listar');
         }
         return redirect()->to('/?alert=errorLogin');
@@ -39,5 +41,9 @@ class Login extends BaseController
         $cadastrar_usuario->insert($dados);
 
         return redirect()->to('produtos/listar');
+    }
+    public function logout()
+    {
+        return redirect()->to('/');
     }
 }
